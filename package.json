@@ -1,6 +1,6 @@
 {
   "name": "@mageswap/permit2-sdk",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An sdk for interacting with permit2.",
   "publishConfig": {
     "access": "public"

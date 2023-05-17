@@ -1,6 +1,10 @@
 import { BigNumber } from '@ethersproject/bignumber'
 
-export const PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+//export const PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+export const PERMIT2_ADDRESS_BY_CHAIN: (chainId: number)=>string=(chainId)=> 
+{
+    return chainId===250?"0xe820edC3aa5933966081850861a5f79517f9A72a":"0x000000000022D473030F116dDEE9F6B43aC78BA3"
+}
 
 export const MaxUint48 = BigNumber.from('0xffffffffffff')
 export const MaxUint160 = BigNumber.from('0xffffffffffffffffffffffffffffffffffffffff')

@@ -9,7 +9,10 @@ var hash = require('@ethersproject/hash');
 var bignumber = require('@ethersproject/bignumber');
 var contracts = require('@ethersproject/contracts');
 
-var PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3';
+//export const PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+var PERMIT2_ADDRESS_BY_CHAIN = function PERMIT2_ADDRESS_BY_CHAIN(chainId) {
+  return chainId === 250 ? "0xe820edC3aa5933966081850861a5f79517f9A72a" : "0x000000000022D473030F116dDEE9F6B43aC78BA3";
+};
 var MaxUint48 = /*#__PURE__*/bignumber.BigNumber.from('0xffffffffffff');
 var MaxUint160 = /*#__PURE__*/bignumber.BigNumber.from('0xffffffffffffffffffffffffffffffffffffffff');
 var MaxUint256 = /*#__PURE__*/bignumber.BigNumber.from('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
@@ -1551,6 +1554,6 @@ exports.MaxUint160 = MaxUint160;
 exports.MaxUint256 = MaxUint256;
 exports.MaxUint48 = MaxUint48;
 exports.MaxUnorderedNonce = MaxUnorderedNonce;
-exports.PERMIT2_ADDRESS = PERMIT2_ADDRESS;
+exports.PERMIT2_ADDRESS_BY_CHAIN = PERMIT2_ADDRESS_BY_CHAIN;
 exports.SignatureTransfer = SignatureTransfer;
 //# sourceMappingURL=permit2-sdk.cjs.development.js.map

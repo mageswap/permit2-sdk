@@ -1,5 +1,5 @@
 const fs = require('fs')
-const { AllowanceTransfer, SignatureTransfer } = require('./dist')
+const { AllowanceTransfer, SignatureTransfer, PERMIT2_ADDRESS_BY_CHAIN } = require('./dist')
 
 const PERMIT2_ADDRESS = '0xf0ffb02791362602acf0edce574e74dd9bd3120e'
 const TOKEN_ADDRESS = '0xb9728f6DE23E1Beeb7Bab38cbf0e60C0A48136eC'
@@ -20,7 +20,7 @@ const interop = {
       spender: SPENDER_ADDRESS,
       sigDeadline: EXPIRATION,
     },
-    PERMIT2_ADDRESS,
+    PERMIT2_ADDRESS_BY_CHAIN(chainId),
     chainId
   ),
 
@@ -37,7 +37,7 @@ const interop = {
       spender: SPENDER_ADDRESS,
       sigDeadline: EXPIRATION,
     },
-    PERMIT2_ADDRESS,
+    PERMIT2_ADDRESS_BY_CHAIN(chainId),
     chainId
   ),
 
@@ -51,7 +51,7 @@ const interop = {
       nonce: '0',
       deadline: EXPIRATION,
     },
-    PERMIT2_ADDRESS,
+    PERMIT2_ADDRESS_BY_CHAIN(chainId),
     chainId
   ),
 
@@ -67,7 +67,7 @@ const interop = {
       nonce: '0',
       deadline: EXPIRATION,
     },
-    PERMIT2_ADDRESS,
+    PERMIT2_ADDRESS_BY_CHAIN(chainId),
     chainId
   ),
 
@@ -81,7 +81,7 @@ const interop = {
       nonce: '0',
       deadline: EXPIRATION,
     },
-    PERMIT2_ADDRESS,
+    PERMIT2_ADDRESS_BY_CHAIN(chainId),
     chainId,
     {
       witnessTypeName: 'MockWitness',

@@ -3,7 +3,10 @@ import { _TypedDataEncoder } from '@ethersproject/hash';
 import { BigNumber } from '@ethersproject/bignumber';
 import { Contract } from '@ethersproject/contracts';
 
-var PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3';
+//export const PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+var PERMIT2_ADDRESS_BY_CHAIN = function PERMIT2_ADDRESS_BY_CHAIN(chainId) {
+  return chainId === 250 ? "0xe820edC3aa5933966081850861a5f79517f9A72a" : "0x000000000022D473030F116dDEE9F6B43aC78BA3";
+};
 var MaxUint48 = /*#__PURE__*/BigNumber.from('0xffffffffffff');
 var MaxUint160 = /*#__PURE__*/BigNumber.from('0xffffffffffffffffffffffffffffffffffffffff');
 var MaxUint256 = /*#__PURE__*/BigNumber.from('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
@@ -1533,5 +1536,5 @@ var AllowanceProvider = /*#__PURE__*/function () {
   return AllowanceProvider;
 }();
 
-export { AllowanceProvider, AllowanceTransfer, InstantExpiration, MaxAllowanceExpiration, MaxAllowanceTransferAmount, MaxOrderedNonce, MaxSigDeadline, MaxSignatureTransferAmount, MaxUint160, MaxUint256, MaxUint48, MaxUnorderedNonce, PERMIT2_ADDRESS, SignatureTransfer };
+export { AllowanceProvider, AllowanceTransfer, InstantExpiration, MaxAllowanceExpiration, MaxAllowanceTransferAmount, MaxOrderedNonce, MaxSigDeadline, MaxSignatureTransferAmount, MaxUint160, MaxUint256, MaxUint48, MaxUnorderedNonce, PERMIT2_ADDRESS_BY_CHAIN, SignatureTransfer };
 //# sourceMappingURL=permit2-sdk.esm.js.map
